@@ -166,15 +166,13 @@ Project Link: [https://github.com/KevinKoetz/Cheat-Sheet](https://github.com/Kev
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/KevinKoetz/repo.svg?style=for-the-badge
-[contributors-url]: https://github.com/KevinKoetz/repo/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/KevinKoetz/repo.svg?style=for-the-badge
-[forks-url]: https://github.com/KevinKoetz/repo/network/members
-[stars-shield]: https://img.shields.io/github/stars/KevinKoetz/repo.svg?style=for-the-badge
-[stars-url]: https://github.com/KevinKoetz/repo/stargazers
-[issues-shield]: https://img.shields.io/github/issues/KevinKoetz/repo.svg?style=for-the-badge
-[issues-url]: https://github.com/KevinKoetz/repo/issues
-[license-shield]: https://img.shields.io/github/license/KevinKoetz/repo.svg?style=for-the-badge
-[license-url]: https://github.com/KevinKoetz/repo/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/KevinKoetz
+[contributors-shield]: https://img.shields.io/github/contributors/KevinKoetz/Cheat-Sheet.svg?style=for-the-badge
+[contributors-url]: https://github.com/KevinKoetz/Cheat-Sheet/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/KevinKoetz/Cheat-Sheet.svg?style=for-the-badge
+[forks-url]: https://github.com/KevinKoetz/Cheat-Sheet/network/members
+[stars-shield]: https://img.shields.io/github/stars/KevinKoetz/Cheat-Sheet.svg?style=for-the-badge
+[stars-url]: https://github.com/KevinKoetz/Cheat-Sheet/stargazers
+[issues-shield]: https://img.shields.io/github/issues/KevinKoetz/Cheat-Sheet.svg?style=for-the-badge
+[issues-url]: https://github.com/KevinKoetz/Cheat-Sheet/issues
+[license-shield]: https://img.shields.io/github/license/KevinKoetz/Cheat-Sheet.svg?style=for-the-badge
+[license-url]: https://github.com/KevinKoetz/Cheat-Sheet/blob/master/LICENSE.txt
