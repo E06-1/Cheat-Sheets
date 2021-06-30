@@ -175,4 +175,4 @@ Project Link: [https://github.com/KevinKoetz/Cheat-Sheet](https://github.com/Kev
 [issues-shield]: https://img.shields.io/github/issues/KevinKoetz/Cheat-Sheet.svg?style=for-the-badge
 [issues-url]: https://github.com/KevinKoetz/Cheat-Sheet/issues
 [license-shield]: https://img.shields.io/github/license/KevinKoetz/Cheat-Sheet.svg?style=for-the-badge
-[license-url]: https://github.com/KevinKoetz/Cheat-Sheet/blob/master/LICENSE.txt
+[license-url]: https://github.com/KevinKoetz/Cheat-Sheet/blob/master/LICENSE
