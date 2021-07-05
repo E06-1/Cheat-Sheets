@@ -108,7 +108,7 @@ This Project purposely uses only plain HTML, CSS and Javascript to get the basic
    ```sh
    git clone https://github.com/KevinKoetz/Cheat-Sheet.git
    ```
-2. Use your favorite Browser to load the Site.
+2. Use your favorite Server to serve the Site. The author is using: https://www.npmjs.com/package/live-server for development purpose.
 
 
 
