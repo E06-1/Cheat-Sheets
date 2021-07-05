@@ -31,7 +31,7 @@ const getAllCheatSheets = () => {
       console.log("Not ready!");
     }
   };
-  httpRequest.open("GET", `${origin}/Cheat-Sheets/`, true);
+  httpRequest.open("GET", `${origin}/sheets/`, true);
   httpRequest.send();
   delete httpRequest;
   delete parser;
@@ -53,8 +53,8 @@ const loadRandomCheatSheet = (filenames) => {
       console.log("Not ready!");
     }
   };
-  console.log(`${origin}/Cheat-Sheets/${RandomCheatSheet}`)
-  httpRequest.open("GET", `${origin}/Cheat-Sheets/${RandomCheatSheet}`, true);
+  console.log(`${origin}/sheets/${RandomCheatSheet}`)
+  httpRequest.open("GET", `${origin}/sheets/${RandomCheatSheet}`, true);
   httpRequest.send();
   delete httpRequest;
 }
