@@ -1,5 +1,5 @@
 
-const origin = window.location.origin;
+const origin = window.location.href;
 
 const getAllCheatSheets = () => {
   const httpRequest = new XMLHttpRequest();
