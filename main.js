@@ -17,6 +17,7 @@ const getAllCheatSheets = () => {
       console.log("Not ready!");
     }
   };
+  console.log(origin)
   httpRequest.open("GET", `${origin}/sheets.json`, true);
   httpRequest.send();
   delete httpRequest;
