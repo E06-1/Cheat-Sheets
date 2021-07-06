@@ -8,7 +8,7 @@ const getAllCheatSheets = () => {
     console.log(httpRequest.readyState);
     if (httpRequest.readyState === XMLHttpRequest.DONE) {
       if (httpRequest.status === 200) {
-        console.log();
+        console.log(httpRequest.responseText)
         loadRandomCheatSheet(JSON.parse(httpRequest.responseText)['sheets']);
       } else {
         console.log(`Error! HTML Status: ${httpRequest.status}`);
