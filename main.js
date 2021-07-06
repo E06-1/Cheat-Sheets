@@ -1,12 +1,13 @@
+let origin = ""
 
-const origin = window.location.href;
-console.log(origin);
+if(window.location.hostname === "127.0.0.1") {
+  origin = window.location.origin + "/";
+}else{origin = window.location.href;}
 
 const getAllCheatSheets = () => {
   const httpRequest = new XMLHttpRequest();
   const parser = new DOMParser();
   httpRequest.onreadystatechange = function () {
-    console.log(httpRequest.readyState);
     if (httpRequest.readyState === XMLHttpRequest.DONE) {
       if (httpRequest.status === 200) {
         console.log(httpRequest.responseText)
@@ -18,8 +19,8 @@ const getAllCheatSheets = () => {
       console.log("Not ready!");
     }
   };
-  console.log(origin)
-  httpRequest.open("GET", `${origin}/sheets.json`, true);
+
+  httpRequest.open("GET", `${origin}sheets.json`, true);
   httpRequest.send();
   delete httpRequest;
   delete parser;
