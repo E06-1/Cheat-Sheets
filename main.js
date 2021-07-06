@@ -8,22 +8,8 @@ const getAllCheatSheets = () => {
     console.log(httpRequest.readyState);
     if (httpRequest.readyState === XMLHttpRequest.DONE) {
       if (httpRequest.status === 200) {
-        const response = parser.parseFromString(
-          httpRequest.responseText,
-          "text/html"
-        );
-        let filenames = [];
-        for (const span of response
-          .getElementById("files")
-          .getElementsByClassName("name")) {
-              filenames.push(span.innerHTML)
-        }
-        filenames = filenames.filter((filename) => {
-            if(filename === "..") return false;
-            if(filename === "_template.html") return false;
-            return true;
-        })
-        loadRandomCheatSheet(filenames);
+        console.log();
+        loadRandomCheatSheet(JSON.parse(httpRequest.responseText)['sheets']);
       } else {
         console.log(`Error! HTML Status: ${httpRequest.status}`);
       }
@@ -31,7 +17,7 @@ const getAllCheatSheets = () => {
       console.log("Not ready!");
     }
   };
-  httpRequest.open("GET", `${origin}/sheets/`, true);
+  httpRequest.open("GET", `${origin}/sheets.json`, true);
   httpRequest.send();
   delete httpRequest;
   delete parser;
