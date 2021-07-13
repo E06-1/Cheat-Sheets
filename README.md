@@ -36,14 +36,14 @@
   <p align="center">
     A Website for Cheat-Sheets created during a Full-Stack Web Development Course
     <br />
-    <a href="https://github.com/KevinKoetz/Cheat-Sheet"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/E06-1/Cheat-Sheet"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/KevinKoetz/Cheat-Sheet">View Demo</a>
+    <a href="https://github.com/E06-1/Cheat-Sheet">View Demo</a>
     ·
-    <a href="https://github.com/KevinKoetz/Cheat-Sheet/issues">Report Bug</a>
+    <a href="https://github.com/E06-1/Cheat-Sheet/issues">Report Bug</a>
     ·
-    <a href="https://github.com/KevinKoetz/Cheat-Sheet/issues">Request Feature</a>
+    <a href="https://github.com/E06-1/Cheat-Sheet/issues">Request Feature</a>
   </p>
 </p>
 
@@ -106,7 +106,7 @@ This Project purposely uses only plain HTML, CSS and Javascript to get the basic
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/KevinKoetz/Cheat-Sheet.git
+   git clone https://github.com/E06-1/Cheat-Sheet.git
    ```
 2. Use your favorite Server to serve the Site. The author is using: https://www.npmjs.com/package/live-server for development purpose.
 
@@ -124,7 +124,7 @@ TBD
 <!-- ROADMAP -->
 ## Roadmap
 
-See the [open issues](https://github.com/KevinKoetz/Cheat-Sheet/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/E06-1/Cheat-Sheet/issues) for a list of proposed features (and known issues).
 
 
 
@@ -151,7 +151,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Project Link: [https://github.com/KevinKoetz/Cheat-Sheet](https://github.com/KevinKoetz/Cheat-Sheet)
+Project Link: [https://github.com/E06-1/Cheat-Sheet](https://github.com/E06-1/Cheat-Sheet)
 
 
 
@@ -167,12 +167,12 @@ Project Link: [https://github.com/KevinKoetz/Cheat-Sheet](https://github.com/Kev
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/KevinKoetz/Cheat-Sheet.svg?style=for-the-badge
-[contributors-url]: https://github.com/KevinKoetz/Cheat-Sheet/graphs/contributors
+[contributors-url]: https://github.com/E06-1/Cheat-Sheet/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/KevinKoetz/Cheat-Sheet.svg?style=for-the-badge
-[forks-url]: https://github.com/KevinKoetz/Cheat-Sheet/network/members
+[forks-url]: https://github.com/E06-1/Cheat-Sheet/network/members
 [stars-shield]: https://img.shields.io/github/stars/KevinKoetz/Cheat-Sheet.svg?style=for-the-badge
-[stars-url]: https://github.com/KevinKoetz/Cheat-Sheet/stargazers
+[stars-url]: https://github.com/E06-1/Cheat-Sheet/stargazers
 [issues-shield]: https://img.shields.io/github/issues/KevinKoetz/Cheat-Sheet.svg?style=for-the-badge
-[issues-url]: https://github.com/KevinKoetz/Cheat-Sheet/issues
+[issues-url]: https://github.com/E06-1/Cheat-Sheet/issues
 [license-shield]: https://img.shields.io/github/license/KevinKoetz/Cheat-Sheet.svg?style=for-the-badge
-[license-url]: https://github.com/KevinKoetz/Cheat-Sheet/blob/master/LICENSE
+[license-url]: https://github.com/E06-1/Cheat-Sheet/blob/master/LICENSE
