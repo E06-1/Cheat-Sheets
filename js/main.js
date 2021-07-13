@@ -2,33 +2,69 @@
 const site = {
   root: null,
   sheets: null,
+  self: null,
+  main: null,
 
   /*Method will initialize the site object by setting the root folder and fetching sheet names*/
   init: async function () {
-
-    /*Live-Server starts index.html directly while github-pages starts the root, 
-    removing index from the end will work on both live-server and github pages*/
-    if (window.location.href.endsWith("index.html")) {
-      window.location.href = window.location.href.replace(/index.html$/, "");
-    } else {
-      this.root = window.location.href;
-    }
+    self = this;
+    self.root = window.location.origin;
+    self.main = document.getElementById("main");
 
     //Get all Cheat-Sheet Names
-    const response = await this.getFileFromServer("/sheets.json");
-    this.sheets = JSON.parse(response)["sheets"];
+    const response = await self.getFileFromServer("/sheets.json");
+    self.sheets = JSON.parse(response)["sheets"];
 
-    //Load random Cheat Sheet on start
-    this.loadSheet(this.sheets[Math.floor(Math.random() * this.sheets.length)]);
+    //register click handler
+    document.addEventListener("click", self.onClickHandler.bind(self));
+
+    //Resolve the starting route
+    self.resolveHashRoute(window.location.hash);
+    
   },
 
-  /*Method will display a single Cheat-Sheet 
-  as specified by it's Filename (no Path necessary) 
-  inside the HTML <main></main> element*/
-  loadSheet: async function (sheetName) {
-    const main = document.getElementsByTagName("main")[0];
-    /*TODO: Dont use Element.innerHTML */
-    main.innerHTML = await this.getFileFromServer(`/sheets/${sheetName}`);
+  /*Method will determine what exactly should be done on each Route*/
+  resolveHashRoute: async function (hash) {
+    //Navigate to home if there is no hash route
+    if ("" === hash) {
+      self.navigateTo.home();
+    }
+
+    if (hash.startsWith("#/")) {
+      let remainder = hash.replace("#/", "");
+      if (remainder.startsWith("home")) {
+        self.navigateTo.home();
+        return;
+      }
+
+      if (remainder.startsWith("browse")) {
+        self.navigateTo.browse();
+        return;
+      }
+
+      if (remainder.startsWith("create")) {
+        self.navigateTo.create();
+        return;
+      }
+
+      if (remainder.startsWith("sheets/")) {
+        remainder = remainder.replace("sheets/", "");
+        self.navigateTo.sheet(remainder);
+        return;
+      }
+
+      if (remainder.startsWith("categories/")) {
+        remainder = remainder.replace("categories/", "");
+        self.navigateTo.category(category);
+        return;
+      }
+    }
+  },
+
+  onClickHandler: function (onClickEvent) {
+    if (onClickEvent.srcElement.nodeName === "A") {
+      self.resolveHashRoute(onClickEvent.srcElement.hash);
+    }
   },
 
   /*Method will get the specified File from the Server
@@ -38,7 +74,8 @@ const site = {
     /*TODO: Implement relative Paths like "./file" or "../folder/file" */
     /*TODO: Status Code handling*/
     let url = null;
-    if (path.startsWith("/")) url = path.replace(/^\//, this.root);
+    if (path.startsWith("/"))
+      url = self.root + window.location.pathname + path.slice(1, path.length);
     return await new Promise((resolve, reject) => {
       const httpRequest = new XMLHttpRequest();
       httpRequest.onreadystatechange = () => {
@@ -54,7 +91,36 @@ const site = {
       httpRequest.send();
     });
   },
+  navigateTo: {
+    //Currently Home is displaying a random cheat sheet (it should show the latest additions)
+    home: async function () {
+      self.resolveHashRoute(
+        `#/sheets/${self.sheets[Math.floor(Math.random() * self.sheets.length)]}`
+      );
+    },
+
+    //Shows a listing of all available sheet sheets ordered alphabetically
+    browse: async function () {
+      main.innerHTML = "";
+    },
+
+    //Shows a site were you can create a Sheet Sheet
+    create: async function () {
+      main.innerHTML = "";
+    },
+
+    //Shows a listing of all Sheets ordered according to category
+    category: async function (category) {
+      main.innerHTML = "";
+    },
+
+    //Loads single Sheet into Main
+    sheet: async function (sheetName) {
+      /*TODO: Dont use Element.innerHTML */
+      main.innerHTML = await self.getFileFromServer(`/sheets/${sheetName}`);
+    },
+  },
 };
 
 //Initialize Site Object on page load
-window.addEventListener("onload", site.init());
+window.addEventListener("load", site.init.bind(site));
