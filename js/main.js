@@ -67,15 +67,6 @@ const site = {
     }
   },
 
-  /*Method will display a single Cheat-Sheet 
-  as specified by it's Filename (no Path necessary) 
-  inside the HTML <main></main> element*/
-  loadSheet: async function (sheetName) {
-    const main = document.getElementsByTagName("main")[0];
-    /*TODO: Dont use Element.innerHTML */
-    main.innerHTML = await self.getFileFromServer(`/sheets/${sheetName}`);
-  },
-
   /*Method will get the specified File from the Server
   currently File names need to be absolute paths.
   For example "/sheets/example.html" Return value is a promise. */
