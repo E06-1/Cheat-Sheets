@@ -6,13 +6,7 @@ const site = {
   /*Method will initialize the site object by setting the root folder and fetching sheet names*/
   init: async function () {
 
-    /*Live-Server starts index.html directly while github-pages starts the root, 
-    removing index from the end will work on both live-server and github pages*/
-    if (window.location.href.endsWith("index.html")) {
-      window.location.href = window.location.href.replace(/index.html$/, "");
-    } else {
-      this.root = window.location.href;
-    }
+    this.root = window.location.origin;
 
     //Get all Cheat-Sheet Names
     const response = await this.getFileFromServer("/sheets.json");
@@ -38,7 +32,7 @@ const site = {
     /*TODO: Implement relative Paths like "./file" or "../folder/file" */
     /*TODO: Status Code handling*/
     let url = null;
-    if (path.startsWith("/")) url = path.replace(/^\//, this.root);
+    if (path.startsWith("/")) url = this.root + window.location.pathname + path.slice(1,path.length);
     return await new Promise((resolve, reject) => {
       const httpRequest = new XMLHttpRequest();
       httpRequest.onreadystatechange = () => {
