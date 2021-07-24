@@ -4,12 +4,14 @@ const site = {
   sheets: null,
   self: null,
   main: null,
+  mdConverter: null,
 
   /*Method will initialize the site object by setting the root folder and fetching sheet names*/
   init: async function () {
     self = this;
     self.root = window.location.origin;
     self.main = document.getElementById("main");
+    self.mdConverter = new showdown.Converter();
 
     //Get all Cheat-Sheet Names
     const response = await self.getFileFromServer("/sheets.json");
@@ -117,7 +119,8 @@ const site = {
     //Loads single Sheet into Main
     sheet: async function (sheetName) {
       /*TODO: Dont use Element.innerHTML */
-      main.innerHTML = await self.getFileFromServer(`/sheets/${sheetName}`);
+      
+      main.innerHTML = self.mdConverter.makeHtml(await self.getFileFromServer(`/sheets/${sheetName}`));
     },
   },
 };
