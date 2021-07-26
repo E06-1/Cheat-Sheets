@@ -141,12 +141,13 @@ const site = {
         </article>`;
       let textArea = document.getElementById("sheetMarkdown");
       let preview = document.getElementById("preview");
+      let sheetName = document.getElementById("sheetName");
 
       textArea.addEventListener("input", (e) => {
         let sheet = document.createElement("article");
 
         sheet.setAttribute("class", `sheet`);
-        sheet.setAttribute("id", `preview`);
+        sheet.setAttribute("id", `${sheetName.value ? sheetName.value : sheetName.getAttribute("placeholder")}`);
 
         /*TODO: Dont use Element.innerHTML, sanitize Converter Output first.*/
         sheet.innerHTML = self.mdConverter.makeHtml(e.target.value);
