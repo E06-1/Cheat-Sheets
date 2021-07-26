@@ -13,6 +13,9 @@ const site = {
     self.main = document.getElementById("main");
     self.mdConverter = new showdown.Converter();
 
+    self.mdConverter.setFlavor("github");
+    self.mdConverter.setOption("openLinksInNewWindow", true);
+
     //Get all Cheat-Sheet Names
     const response = await self.getFileFromPath("/sheets.json");
     self.sheets = JSON.parse(response)["sheets"];
@@ -75,9 +78,10 @@ const site = {
     /*TODO: Implement relative Paths like "./file" or "../folder/file" */
 
     let url = null;
-    if (path.startsWith("/")) url = self.root + window.location.pathname + path.slice(1, path.length);
+    if (path.startsWith("/"))
+      url = self.root + window.location.pathname + path.slice(1, path.length);
 
-    if(url !== null) return await self.getFileFromUrl(url);
+    if (url !== null) return await self.getFileFromUrl(url);
   },
 
   getFileFromUrl: async function (url) {
@@ -115,7 +119,39 @@ const site = {
 
     //Shows a site were you can create a Sheet Sheet
     create: async function () {
-      main.innerHTML = "";
+      main.innerHTML = `
+        <article id="create">
+          <section id="input">
+            <form action="" method="post">
+              
+              <div>
+                <label for="sheetName">Name of your Sheet:</label>
+                <input type="text" name="sheetName" id="sheetName" placeholder="My-Sheet"></input>
+              </div>
+              <div>
+                <label for="sheetMarkdown">Write your Markdown here:</label>
+                <textarea name="sheetMarkdown" id="sheetMarkdown"></textarea>
+              </div>
+              <div>
+                <input type="button" name="createSheet" id="createSheet" value="Create"></input>
+              </div>
+            </form>
+          </section>
+          <section id="preview"></section>
+        </article>`;
+      let textArea = document.getElementById("sheetMarkdown");
+      let preview = document.getElementById("preview");
+
+      textArea.addEventListener("input", (e) => {
+        let sheet = document.createElement("article");
+
+        sheet.setAttribute("class", `sheet`);
+        sheet.setAttribute("id", `preview`);
+
+        /*TODO: Dont use Element.innerHTML, sanitize Converter Output first.*/
+        sheet.innerHTML = self.mdConverter.makeHtml(e.target.value);
+        preview.innerHTML = sheet.outerHTML;
+      });
     },
 
     //Shows a listing of all Sheets ordered according to category
@@ -125,11 +161,17 @@ const site = {
 
     //Loads single Sheet into Main
     sheet: async function (sheetName) {
-      /*TODO: Dont use Element.innerHTML */
+      let sheet = document.createElement("article");
 
-      main.innerHTML = self.mdConverter.makeHtml(
+      sheet.setAttribute("class", `sheet`);
+      sheet.setAttribute("id", `${sheetName}`);
+
+      /*TODO: Dont use Element.innerHTML, sanitize first.*/
+      sheet.innerHTML = self.mdConverter.makeHtml(
         await self.getFileFromPath(`/sheets/${sheetName}`)
       );
+
+      main.innerHTML = sheet.outerHTML;
     },
   },
 };
