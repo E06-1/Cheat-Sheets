@@ -14,7 +14,7 @@ const site = {
     self.mdConverter = new showdown.Converter();
 
     //Get all Cheat-Sheet Names
-    const response = await self.getFileFromServer("/sheets.json");
+    const response = await self.getFileFromPath("/sheets.json");
     self.sheets = JSON.parse(response)["sheets"];
 
     //register click handler
@@ -22,7 +22,6 @@ const site = {
 
     //Resolve the starting route
     self.resolveHashRoute(window.location.hash);
-    
   },
 
   /*Method will determine what exactly should be done on each Route*/
@@ -72,12 +71,17 @@ const site = {
   /*Method will get the specified File from the Server
   currently File names need to be absolute paths.
   For example "/sheets/example.html" Return value is a promise. */
-  getFileFromServer: async function (path) {
+  getFileFromPath: async function (path) {
     /*TODO: Implement relative Paths like "./file" or "../folder/file" */
-    /*TODO: Status Code handling*/
+
     let url = null;
-    if (path.startsWith("/"))
-      url = self.root + window.location.pathname + path.slice(1, path.length);
+    if (path.startsWith("/")) url = self.root + window.location.pathname + path.slice(1, path.length);
+
+    if(url !== null) return await self.getFileFromUrl(url);
+  },
+
+  getFileFromUrl: async function (url) {
+    /*TODO: Status Code handling*/
     return await new Promise((resolve, reject) => {
       const httpRequest = new XMLHttpRequest();
       httpRequest.onreadystatechange = () => {
@@ -93,11 +97,14 @@ const site = {
       httpRequest.send();
     });
   },
+
   navigateTo: {
     //Currently Home is displaying a random cheat sheet (it should show the latest additions)
     home: async function () {
       self.resolveHashRoute(
-        `#/sheets/${self.sheets[Math.floor(Math.random() * self.sheets.length)]}`
+        `#/sheets/${
+          self.sheets[Math.floor(Math.random() * self.sheets.length)]
+        }`
       );
     },
 
@@ -119,8 +126,10 @@ const site = {
     //Loads single Sheet into Main
     sheet: async function (sheetName) {
       /*TODO: Dont use Element.innerHTML */
-      
-      main.innerHTML = self.mdConverter.makeHtml(await self.getFileFromServer(`/sheets/${sheetName}`));
+
+      main.innerHTML = self.mdConverter.makeHtml(
+        await self.getFileFromPath(`/sheets/${sheetName}`)
+      );
     },
   },
 };
