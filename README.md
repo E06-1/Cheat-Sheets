@@ -31,19 +31,19 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <h3 align="center">Cheat-Sheet</h3>
+  <h3 align="center">Cheat-Sheets</h3>
 
   <p align="center">
     A Website for Cheat-Sheets created during a Full-Stack Web Development Course
     <br />
-    <a href="https://github.com/E06-1/Cheat-Sheet"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/E06-1/Cheat-Sheets"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/E06-1/Cheat-Sheet">View Demo</a>
+    <a href="https://github.com/E06-1/Cheat-Sheets">View Demo</a>
     ·
-    <a href="https://github.com/E06-1/Cheat-Sheet/issues">Report Bug</a>
+    <a href="https://github.com/E06-1/Cheat-Sheets/issues">Report Bug</a>
     ·
-    <a href="https://github.com/E06-1/Cheat-Sheet/issues">Request Feature</a>
+    <a href="https://github.com/E06-1/Cheat-Sheets/issues">Request Feature</a>
   </p>
 </p>
 
@@ -124,7 +124,7 @@ TBD
 <!-- ROADMAP -->
 ## Roadmap
 
-See the [open issues](https://github.com/E06-1/Cheat-Sheet/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/E06-1/Cheat-Sheets/issues) for a list of proposed features (and known issues).
 
 
 
@@ -151,7 +151,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Project Link: [https://github.com/E06-1/Cheat-Sheet](https://github.com/E06-1/Cheat-Sheet)
+Project Link: [https://github.com/E06-1/Cheat-Sheets](https://github.com/E06-1/Cheat-Sheets)
 
 
 
@@ -166,13 +166,13 @@ Project Link: [https://github.com/E06-1/Cheat-Sheet](https://github.com/E06-1/Ch
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/KevinKoetz/Cheat-Sheet.svg?style=for-the-badge
-[contributors-url]: https://github.com/E06-1/Cheat-Sheet/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/KevinKoetz/Cheat-Sheet.svg?style=for-the-badge
-[forks-url]: https://github.com/E06-1/Cheat-Sheet/network/members
-[stars-shield]: https://img.shields.io/github/stars/KevinKoetz/Cheat-Sheet.svg?style=for-the-badge
-[stars-url]: https://github.com/E06-1/Cheat-Sheet/stargazers
-[issues-shield]: https://img.shields.io/github/issues/KevinKoetz/Cheat-Sheet.svg?style=for-the-badge
-[issues-url]: https://github.com/E06-1/Cheat-Sheet/issues
-[license-shield]: https://img.shields.io/github/license/KevinKoetz/Cheat-Sheet.svg?style=for-the-badge
-[license-url]: https://github.com/E06-1/Cheat-Sheet/blob/master/LICENSE
+[contributors-shield]: https://img.shields.io/github/contributors/KevinKoetz/Cheat-Sheets.svg?style=for-the-badge
+[contributors-url]: https://github.com/E06-1/Cheat-Sheets/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/KevinKoetz/Cheat-Sheets.svg?style=for-the-badge
+[forks-url]: https://github.com/E06-1/Cheat-Sheets/network/members
+[stars-shield]: https://img.shields.io/github/stars/KevinKoetz/Cheat-Sheets.svg?style=for-the-badge
+[stars-url]: https://github.com/E06-1/Cheat-Sheets/stargazers
+[issues-shield]: https://img.shields.io/github/issues/KevinKoetz/Cheat-Sheets.svg?style=for-the-badge
+[issues-url]: https://github.com/E06-1/Cheat-Sheets/issues
+[license-shield]: https://img.shields.io/github/license/KevinKoetz/Cheat-Sheets.svg?style=for-the-badge
+[license-url]: https://github.com/E06-1/Cheat-Sheets/blob/master/LICENSE
