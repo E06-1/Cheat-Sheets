@@ -66,7 +66,7 @@ const site = {
   },
 
   onClickHandler: function (onClickEvent) {
-    if (onClickEvent.srcElement.nodeName === "A") {
+    if (onClickEvent.srcElement.nodeName === "A" && onClickEvent.srcElement.hash !== "" && onClickEvent.srcElement.origin === self.root) {
       self.resolveHashRoute(onClickEvent.srcElement.hash);
     }
   },
